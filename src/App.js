@@ -1,12 +1,19 @@
 import React from 'react';
 import './App.css';
-import ControlButtons from './components/ControlButtons';
+
+import DataSection from './components/DataSection';
 
 function App() {
   return (
     <div className="App">
-      hello
-      <ControlButtons/>
+      <section>
+        <header>
+          <h1>CV App</h1>
+        </header>
+        <DataSection title="general info"/>
+        <DataSection title="education"/>
+        <DataSection title="experience"/>
+      </section>
     </div>
   );
 }
