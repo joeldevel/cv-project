@@ -11,11 +11,11 @@ class DataSection extends React.Component {
       <article>
         <header>
           <h2>{this.props.title}</h2>
-          <div>
+        </header>
+          <form>
             {this.props.children}
             <ControlButtons/>
-          </div>
-        </header>
+          </form>
       </article>
     );
   }
