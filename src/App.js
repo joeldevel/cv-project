@@ -11,9 +11,9 @@ class App extends React.Component {
     this.state = {
       userData: {
         generalInfo: {
-          name: 'pepino',
+          name: '',
           lastname: '',
-          email: 'pepe@mail.com',
+          email: '',
           telephone: ''
         },
         education: {
@@ -36,7 +36,21 @@ class App extends React.Component {
     this.saveData = this.saveData.bind(this);
 
   }
+  componentDidMount() {
+    console.log('mounting');
+    // check for data in localstorage
+    const generalInfo = localStorage.getItem('generalInfo');
+    if(generalInfo) {
+      let generalInfoObj = JSON.parse(generalInfo);
 
+      this.setState(prevState=>({
+        userData:{
+          ...prevState.userData,
+          generalInfo: generalInfoObj
+        }
+      }))
+    }
+  }
   handleText(e) {
     console.log(e.target);
     //see event polling
