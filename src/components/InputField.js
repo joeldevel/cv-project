@@ -13,7 +13,7 @@ class InputField extends React.Component {
     // if (this.props.userID !== prevProps.userID) {
     //   this.fetchData(this.props.userID);
     // }
-    if(this.state.isReadOnly == true) {
+    if(this.state.isReadOnly === true) {
       console.log('input has been updated', this.state.isReadOnly)
       this.setState({isReadOnly:false});
     }
