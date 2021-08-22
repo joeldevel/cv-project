@@ -9,7 +9,8 @@ class InputField extends React.Component {
       <div>
         <label htmlFor={this.props.inputName}>{this.props.inputLabel}</label>
         <input type={this.props.inputType} name={this.props.inputName}
-               value={this.props.value}/>
+               value={this.props.value}
+               onChange={this.props.onChange}/>
       </div>
     );
   }

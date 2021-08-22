@@ -28,7 +28,23 @@ class App extends React.Component {
           until: ''
         }
       }
-    }
+    } // end state
+
+    this.handleText = this.handleText.bind(this);
+  }
+
+  handleText(e) {
+    console.log(e.target.value);
+    e.persist();
+    this.setState(prevState=>({
+      userData:{
+        ...prevState.userData,
+        generalInfo: {
+          ...prevState.userData.generalInfo,
+          name: e.target.value
+        }
+      }
+    }))
   }
 
   render() {
@@ -40,16 +56,22 @@ class App extends React.Component {
           </header>
           <DataSection title="general info">
             <InputText inputName="name" inputLabel="your name: "
-                       value={this.state.userData.generalInfo.name}/>
+                       value={this.state.userData.generalInfo.name}
+                       onChange={this.handleText}
+                       />
+                     {/*
             <InputEmail inputName="email" inputLabel="your email: "
                        value={this.state.userData.generalInfo.email}/>
+                       */}
           </DataSection>
+          {/*
           <DataSection title="education">
             <InputText inputName="school" inputLabel="your school: "
                        value={this.state.userData.education.school}/>
             <InputText inputName="title" inputLabel="your title: "
                        value={this.state.userData.education.title}/>
           </DataSection>
+          */}
           {/*
           <DataSection title="experience"/>
           */}
