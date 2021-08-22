@@ -7,7 +7,7 @@ class ControlButtons extends React.Component {
     return (
       <>
       <Button label="edit" type="button" onClick={this.props.makeEditable}/>
-      <Button label="submit" type="submit"/>
+      <Button label="submit" type="submit" onClick={this.props.saveData}/>
       </>
     );
   }

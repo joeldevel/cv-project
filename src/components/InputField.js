@@ -19,7 +19,7 @@ class InputField extends React.Component {
     }
   }
   render() {
-    console.log(this.props.isReadOnly)
+    // console.log(this.props.isReadOnly)
     return(
       <div>
         <label htmlFor={this.props.inputName}>{this.props.inputLabel}</label>

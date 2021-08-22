@@ -9,19 +9,24 @@ class DataSection extends React.Component {
       allowEdit: false
     }
     this.makeEditable = this.makeEditable.bind(this);
+    // this.saveData = this.saveData.bind(this);
   }
   makeEditable(e) {
     // e.preventDefult();
     this.setState({allowEdit:true});
-    console.log('allowEdit', this.state.allowEdit);;
+    // console.log('allowEdit', this.state.allowEdit);;
   }
+  // saveData(e) {
+  //   e.preventDefault();
+  //   this.props.saveData
+  // }
   render() {
     return(
       <article>
         <header>
           <h2>{this.props.title}</h2>
         </header>
-          <form>
+          <form name={this.props.name}>
             {
             React.Children.map(this.props.children, (child) => {
               return React.cloneElement(child, {
@@ -29,7 +34,9 @@ class DataSection extends React.Component {
               });
             })
           }
-            <ControlButtons makeEditable={this.makeEditable}/>
+            <ControlButtons makeEditable={this.makeEditable}
+                            saveData={this.props.saveData}
+                            />
           </form>
       </article>
     );
