@@ -6,7 +6,7 @@ class ControlButtons extends React.Component {
     return (
       <>
       <Button label="edit"/>
-      <Button label="submit"/>
+      <Button label="submit" type="submit"/>
       </>
     );
   }
