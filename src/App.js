@@ -31,6 +31,7 @@ class App extends React.Component {
     } // end state
 
     this.handleText = this.handleText.bind(this);
+    this.makeEditable = this.makeEditable.bind(this);
   }
 
   handleText(e) {
@@ -47,6 +48,10 @@ class App extends React.Component {
     }))
   }
 
+  makeEditable() {
+
+  }
+
   render() {
     return (
       <div className="App">
@@ -54,12 +59,17 @@ class App extends React.Component {
           <header>
             <h1>CV App</h1>
           </header>
-          <DataSection title="general info">
+          <DataSection title="general info" makeEditable={this.makeEditable}>
             <InputText inputName="name" inputLabel="your name: "
                        value={this.state.userData.generalInfo.name}
                        onChange={this.handleText}
                        />
                      {/*
+           <InputText inputName="bananas" inputLabel="your name: "
+                      value="manzana"
+                      defaultValue=""
+                      readOnly={true}
+                      />
             <InputEmail inputName="email" inputLabel="your email: "
                        value={this.state.userData.generalInfo.email}/>
                        */}
